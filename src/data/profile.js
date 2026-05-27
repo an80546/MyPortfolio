@@ -5,6 +5,6 @@ export const profile = {
   location: 'Taichung, Taiwan',
   email: 'KamiMaple@example.com',
   intro:
-    '我喜歡把資訊整理成清楚、好操作的介面，目前專注在 Vue 3、元件化設計與使用者體驗。這個作品集整理了我的技能、練習專案與學習成果。',
+    '我正在學習前端與 UI/UX 設計，熟悉 Vue 基礎、資料整理與介面製作。個性細心、慢熟但真誠，喜歡用柔軟的視覺，把想法做成能被理解的作品。',
   highlights: ['Vue 3 Composition API', 'UI 版面設計', '互動式網站製作'],
 }
