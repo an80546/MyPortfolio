@@ -66,7 +66,7 @@ defineProps({
 
 .profile-card::before {
   right: 62px;
-  border-radius: 9px 6px 12px 6px;
+  border-radius: 9px 6px 6px 6px;
 }
 
 .profile-card::after {

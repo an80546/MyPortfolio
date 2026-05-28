@@ -1,7 +1,7 @@
 // 個人資料集中管理，再透過 props 傳給 ProfileCard 元件顯示。
 export const profile = {
   name: '陳奕鈞',
-  title: '前端設計與 Vue 開發學習者',
+  title: '資料庫、前端設計與 Vue 開發學習者',
   location: 'Taichung, Taiwan',
   email: 'KamiMaple@example.com',
   intro:

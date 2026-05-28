@@ -31,7 +31,7 @@ body {
   background:
     radial-gradient(circle at 12% 8%, rgba(144, 203, 255, 0.28), transparent 32rem),
     radial-gradient(circle at 88% 18%, rgba(221, 196, 255, 0.22), transparent 30rem),
-    linear-gradient(180deg, #f7fbff 0%, #eef5ff 52%, #f8f3ff 100%);
+    linear-gradient(180deg, #f7fbff 0%, #eef5ff 52%, #d9caec 100%);
 }
 
 button,

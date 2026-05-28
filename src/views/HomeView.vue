@@ -7,8 +7,7 @@ import { profile } from '../data/profile'
 <template>
   <div class="home-view">
     <ProfileCard :profile="profile" />
-    <p class="home-tagline">用柔軟的視覺，整理我正在學會的技能與作品。</p>
-
+    <p class="home-tagline">無論對此生的決定為何，一定要真誠的對待自己。</p>
     <section class="home-actions">
       <div>
         <p class="eyebrow">Portfolio Assignment</p>
