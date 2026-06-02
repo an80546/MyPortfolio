@@ -7,4 +7,5 @@ export const profile = {
   intro:
     '我正在學習前端與 UI/UX 設計，熟悉 Vue 基礎、資料整理與介面製作。個性細心、慢熟但真誠，喜歡用柔軟的視覺，把想法做成能被理解的作品。',
   highlights: ['Vue 3 Composition API', 'UI 版面設計', '互動式網站製作'],
+  phone: '0922776220',
 }
