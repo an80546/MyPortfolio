@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
 
 // defineProps 用來接收上層傳入的 profile 資料，讓元件可以重複使用不同資料。
@@ -14,14 +15,27 @@ const isIntroExpanded = ref(false)
 
 <template>
   <section class="profile-card">
-    <div class="avatar" aria-hidden="true">
-      <img class="profile-photo" src="/me.jpg" :alt="`${profile.name} 的個人照片`" />
+    <div class="profile-rail">
+      <div class="avatar" aria-hidden="true">
+        <img class="profile-photo" src="/me.jpg" :alt="`${profile.name} 的個人照片`" />
+      </div>
+
+      <div class="contact-list" aria-label="Contact me">
+        <span class="contact-label">Contact me</span>
+        <a :href="`mailto:${profile.email}`">{{ profile.email }}</a>
+        <span>{{ profile.location }}</span>
+        <span>Tel : {{ profile.phone }}</span>
+      </div>
     </div>
 
     <div class="profile-content">
       <p class="eyebrow">About Me</p>
       <h1>{{ profile.name }}</h1>
       <p class="title">{{ profile.title }}</p>
+      <div class="profile-actions" aria-label="Portfolio links">
+        <RouterLink class="primary-link" to="/projects">作品</RouterLink>
+        <RouterLink class="secondary-link" to="/skills">技能</RouterLink>
+      </div>
       <p class="intro" :class="{ 'intro--collapsed': !isIntroExpanded }">我是陳奕鈞，目前就讀於勤益科技大學資訊管理系。平時熱衷於體驗各類軟體與遊戲，並透過程式追蹤、規則拆解與使用者觀察來理解產品設計邏輯。我曾參與遊戲 Demo 的 UX
         回饋，從中學習以使用者角度思考問題，並透過分析與整理提出具體建議。 <br><br>
 
@@ -44,11 +58,6 @@ const isIntroExpanded = ref(false)
         <li v-for="item in profile.highlights" :key="item">{{ item }}</li>
       </ul>
 
-      <div class="meta">
-        <span>{{ profile.location }}</span>
-        <a :href="`mailto:${profile.email}`">{{ profile.email }}</a>
-        <span>Tel : {{ profile.phone }}</span>
-      </div>
     </div>
   </section>
 </template>
@@ -57,9 +66,9 @@ const isIntroExpanded = ref(false)
 .profile-card {
   position: relative;
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 250px minmax(0, 1fr);
   gap: 36px;
-  align-items: center;
+  align-items: start;
   overflow: hidden;
   border: 1px solid rgba(172, 207, 252, 0.82);
   border-radius: 22px;
@@ -100,6 +109,12 @@ const isIntroExpanded = ref(false)
   box-shadow: 0 24px 54px rgba(118, 146, 224, 0.2);
 }
 
+.profile-rail {
+  display: grid;
+  gap: 16px;
+  justify-items: center;
+}
+
 .avatar {
   display: grid;
   width: 220px;
@@ -124,6 +139,29 @@ const isIntroExpanded = ref(false)
   object-position: center;
 }
 
+.contact-list {
+  display: grid;
+  width: 220px;
+  gap: 8px;
+  border-top: 1px solid rgba(205, 224, 251, 0.9);
+  padding-top: 14px;
+  color: #52677f;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.contact-list a {
+  color: #4f78d1;
+}
+
+.contact-label {
+  color: #4f8fe8;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
 h1 {
   margin: 0;
   color: #1f2f46;
@@ -136,6 +174,13 @@ h1 {
   color: #4f8fe8;
   font-size: 1.18rem;
   font-weight: 800;
+}
+
+.profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
 }
 
 .intro {
@@ -192,18 +237,6 @@ h1 {
   font-weight: 700;
 }
 
-.meta {
-  display: flex;
-  gap: 18px;
-  margin-top: 24px;
-  color: #65768c;
-  font-weight: 700;
-}
-
-.meta a {
-  color: #5b8eed;
-}
-
 @media (max-width: 720px) {
   .profile-card {
     grid-template-columns: 1fr;
@@ -232,10 +265,19 @@ h1 {
   }
 
   .avatar,
-  .profile-photo {
+  .profile-photo,
+  .contact-list {
     width: min(100%, 240px);
+  }
+
+  .avatar,
+  .profile-photo {
     height: auto;
     aspect-ratio: 1;
+  }
+
+  .profile-rail {
+    justify-items: center;
   }
 
   .avatar {
@@ -253,6 +295,12 @@ h1 {
 
   .title {
     font-size: 1.03rem;
+  }
+
+  .profile-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
 
   .intro {
@@ -304,11 +352,5 @@ h1 {
     font-size: 0.86rem;
   }
 
-  .meta {
-    flex-direction: column;
-    gap: 8px;
-    font-size: 0.92rem;
-    word-break: break-word;
-  }
 }
 </style>

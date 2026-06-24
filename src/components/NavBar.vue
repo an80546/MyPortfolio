@@ -8,8 +8,7 @@ const route = useRoute()
   <header class="nav-wrap">
     <nav class="nav-bar" aria-label="主要導覽">
       <RouterLink class="brand" to="/">
-        <span class="brand-mark">M</span>
-        <span>鈞鈞 Portfolio</span>
+        <span>陳奕鈞 Maple</span>
       </RouterLink>
 
       <div class="nav-links">

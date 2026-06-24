@@ -8,7 +8,7 @@ import { skills } from '../data/skills'
   <section>
     <header class="page-header">
       <p class="eyebrow">Skills</p>
-      <h1 class="page-title">技能頁</h1>
+      <h1 class="page-title">技能</h1>
       <p class="page-description">
       <span>擁有的證照以及擅長的技能、領域</span>
       </p>
