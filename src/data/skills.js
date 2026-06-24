@@ -28,4 +28,25 @@ export const skills = [
     description: '能建立清楚的資訊層級，讓內容容易瀏覽與操作。',
     tools: ['Wireframe', 'Visual hierarchy', 'Prototype', 'Accessibility'],
   },
+  {
+    id: 5,
+    title: 'SQL 語言',
+    level: '基礎',
+    description: '能撰寫查詢語法、篩選資料並整理資料表之間的關聯。',
+    tools: ['SELECT', 'WHERE', 'JOIN', 'GROUP BY'],
+  },
+  {
+    id: 6,
+    title: 'Git 語法使用',
+    level: '基礎',
+    description: '能使用 Git 進行版本控管、分支操作與專案變更追蹤。',
+    tools: ['commit', 'branch', 'merge', 'push'],
+  },
+  {
+    id: 7,
+    title: 'Tailwind CSS',
+    level: '基礎',
+    description: '能使用 utility class 快速建立排版、間距與響應式樣式。',
+    tools: ['Utility classes', 'Responsive', 'Spacing', 'Colors'],
+  },
 ]
