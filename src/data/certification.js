@@ -19,4 +19,10 @@ export const certifications = [{
     description: '具備核心程式設計、物件導向、軟體開發流程、Web 應用與資料庫基礎概念。',
     tools: ['Programming Fundamentals', 'OOP', 'Web Applications', 'Databases'],
   },
+  {
+  title: 'IT Specialist - Networking',
+  level: '熟悉',
+  description: '具備基礎網路架構、TCP/IP、網路服務、網路拓樸，以及有線與無線網路環境下的故障排除概念。',
+  tools: ['TCP/IP', 'Networking Services', 'Network Topologies', 'Wired/Wireless Networking', 'Troubleshooting'],
+}
 ]
