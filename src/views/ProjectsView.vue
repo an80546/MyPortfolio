@@ -48,9 +48,6 @@ function toggleFavorite(id) {
       <div class="page-header">
         <p class="eyebrow">Projects</p>
         <h1 class="page-title">作品列表頁</h1>
-        <p class="page-description">
-          ProjectCard 透過 emits 通知上層要查看作品或切換收藏；真正的路由跳轉由本頁處理。
-        </p>
       </div>
 
       <div class="favorite-counter">🐾 已收藏：{{ favoriteCount }} 個</div>

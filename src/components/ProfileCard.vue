@@ -35,7 +35,7 @@ defineProps({
       <div class="meta">
         <span>{{ profile.location }}</span>
         <a :href="`mailto:${profile.email}`">{{ profile.email }}</a>
-        <span>Phone : {{ profile.phone }}</span>
+        <span>Tel : {{ profile.phone }}</span>
       </div>
     </div>
   </section>

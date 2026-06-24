@@ -11,7 +11,6 @@ import { profile } from '../data/profile'
     <section class="home-actions">
       <div>
         <p class="eyebrow">Portfolio Assignment</p>
-        <h2>用 Vue 元件、props、emits 與 router 完成的個人網站</h2>
       </div>
       <div class="action-links">
         <RouterLink class="primary-link" to="/projects">瀏覽作品</RouterLink>
