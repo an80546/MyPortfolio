@@ -1,18 +1,14 @@
 <script setup>
-// 子元件用 props 接收單一作品資料與收藏狀態，畫面內容由上層資料決定。
+// 子元件用 props 接收單一作品資料，畫面內容由上層資料決定。
 defineProps({
   project: {
     type: Object,
     required: true,
   },
-  isFavorite: {
-    type: Boolean,
-    default: false,
-  },
 })
 
 // defineEmits 宣告子元件會發出的事件；ProjectCard 不直接換頁，而是通知上層處理。
-const emit = defineEmits(['view-project', 'toggle-favorite'])
+const emit = defineEmits(['view-project'])
 </script>
 
 <template>
@@ -31,15 +27,6 @@ const emit = defineEmits(['view-project', 'toggle-favorite'])
       <!-- 點擊後 emit 作品 id 給 ProjectsView，由上層用 router.push 前往詳細頁。 -->
       <button class="button primary" type="button" @click="emit('view-project', project.id)">
         查看作品
-      </button>
-      <button
-        class="button secondary favorite-button"
-        :class="{ active: isFavorite }"
-        type="button"
-        @click="emit('toggle-favorite', project.id)"
-      >
-        <!-- Vue 的 class binding 與文字插值可依照收藏狀態即時改變按鈕樣式與文字。 -->
-        {{ isFavorite ? '取消收藏' : '收藏' }}
       </button>
     </div>
   </article>
@@ -62,15 +49,6 @@ const emit = defineEmits(['view-project', 'toggle-favorite'])
     border-color 0.2s ease,
     transform 0.2s ease,
     box-shadow 0.2s ease;
-}
-
-.project-card::after {
-  position: absolute;
-  top: 18px;
-  right: 20px;
-  content: "🐾";
-  color: rgba(147, 178, 239, 0.42);
-  font-size: 1.05rem;
 }
 
 .project-card:hover {
@@ -126,10 +104,41 @@ h2 {
   cursor: pointer;
 }
 
-.favorite-button.active {
-  border-color: #d7b7ff;
-  color: #7351bd;
-  background: #fbf5ff;
-  box-shadow: 0 10px 22px rgba(189, 154, 232, 0.18);
+@media (max-width: 720px) {
+  .project-card {
+    min-height: 0;
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  .project-card:hover {
+    transform: none;
+  }
+
+  h2 {
+    font-size: 1.28rem;
+    line-height: 1.3;
+  }
+
+  .summary {
+    font-size: 0.96rem;
+  }
+
+  .tag-list {
+    gap: 7px;
+    margin-top: 18px;
+  }
+
+  .tag-list li {
+    font-size: 0.8rem;
+  }
+
+  .card-actions {
+    margin-top: 22px;
+  }
+
+  .button {
+    width: 100%;
+  }
 }
 </style>

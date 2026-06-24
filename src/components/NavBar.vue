@@ -117,4 +117,46 @@ const route = useRoute()
   opacity: 1;
   transform: scaleX(1);
 }
+
+@media (max-width: 720px) {
+  .nav-bar {
+    width: min(100% - 32px, 560px);
+    min-height: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 12px 0;
+  }
+
+  .brand {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+  }
+
+  .nav-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .nav-links a {
+    display: inline-flex;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 10px;
+    text-align: center;
+  }
+
+  .nav-links a::after {
+    right: 10px;
+    left: 10px;
+  }
+}
 </style>

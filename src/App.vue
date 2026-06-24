@@ -25,7 +25,6 @@ import NavBar from './components/NavBar.vue'
 }
 
 body {
-  min-width: 1024px;
   min-height: 100vh;
   margin: 0;
   background:
@@ -113,5 +112,44 @@ a {
 .button:hover {
   transform: translateY(-2px);
   box-shadow: 0 14px 28px rgba(151, 138, 238, 0.18);
+}
+
+@media (max-width: 720px) {
+  body {
+    overflow-x: hidden;
+    background:
+      radial-gradient(circle at 0% 0%, rgba(144, 203, 255, 0.26), transparent 18rem),
+      radial-gradient(circle at 100% 8%, rgba(221, 196, 255, 0.2), transparent 18rem),
+      linear-gradient(180deg, #f7fbff 0%, #eef5ff 58%, #dfd2ef 100%);
+  }
+
+  .app-shell {
+    width: min(100% - 32px, 560px);
+    padding: 24px 0 46px;
+  }
+
+  .page-header {
+    margin-bottom: 22px;
+  }
+
+  .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+  }
+
+  .page-title {
+    font-size: clamp(1.85rem, 9vw, 2.25rem);
+  }
+
+  .page-description {
+    font-size: 0.98rem;
+  }
+
+  .primary-link,
+  .secondary-link,
+  .button {
+    min-height: 44px;
+    padding: 11px 16px;
+  }
 }
 </style>

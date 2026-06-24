@@ -16,7 +16,7 @@ import { skills } from '../data/skills'
 
     <div class="skills-grid">
       <!-- 將 skills 陣列用 v-for 轉成多張 SkillCard，並用 props 傳入單一 skill。 -->
-      <SkillCard v-for="skill in skills" :key="skill.id" :skill="skill" />
+      <SkillCard v-for="skill in skills" :key="skill.id" :skill="skill" logo-only />
     </div>
 
     <section class="certifications-section" aria-labelledby="certifications-title">
@@ -54,7 +54,26 @@ import { skills } from '../data/skills'
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 720px) {
+  .certifications-section {
+    margin-top: 34px;
+  }
+
+  .section-header {
+    margin-bottom: 14px;
+  }
+
+  .section-header h2 {
+    font-size: 1.42rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 }
 </style>

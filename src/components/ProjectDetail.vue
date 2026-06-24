@@ -188,4 +188,68 @@ h2 {
   margin: 10px 0 0;
   color: #4f6074;
 }
+
+@media (max-width: 840px) {
+  .detail-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .detail-card {
+    border-radius: 16px;
+    padding: 22px;
+  }
+
+  .detail-heading {
+    gap: 24px;
+  }
+
+  h1 {
+    font-size: clamp(1.85rem, 9vw, 2.25rem);
+  }
+
+  .detail-heading p:not(.eyebrow) {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .demo-link {
+    width: 100%;
+    min-height: 44px;
+    border-radius: 8px;
+  }
+
+  .meta-grid {
+    gap: 10px;
+  }
+
+  .meta-grid div {
+    border-radius: 14px;
+    padding: 14px;
+  }
+
+  .detail-section,
+  .result-box {
+    margin-top: 28px;
+  }
+
+  .tag-list {
+    gap: 8px;
+  }
+
+  .tag-list li {
+    font-size: 0.84rem;
+  }
+
+  .feature-list li,
+  .result-box {
+    border-radius: 14px;
+    padding: 14px;
+  }
+}
 </style>

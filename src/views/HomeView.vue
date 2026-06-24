@@ -7,7 +7,6 @@ import { profile } from '../data/profile'
 <template>
   <div class="home-view">
     <ProfileCard :profile="profile" />
-    <p class="home-tagline">無論對此生的決定為何，一定要真誠的對待自己。</p>
     <section class="home-actions">
       <div>
         <p class="eyebrow">Portfolio Assignment</p>
@@ -24,18 +23,6 @@ import { profile } from '../data/profile'
 .home-view {
   display: grid;
   gap: 22px;
-}
-
-.home-tagline {
-  width: fit-content;
-  margin: -4px 0 4px;
-  border: 1px solid rgba(205, 224, 251, 0.82);
-  border-radius: 999px;
-  padding: 10px 16px;
-  color: #4d6382;
-  background: rgba(255, 255, 255, 0.72);
-  box-shadow: 0 12px 24px rgba(124, 150, 232, 0.08);
-  font-weight: 700;
 }
 
 .home-actions {
@@ -61,5 +48,28 @@ h2 {
   display: flex;
   flex-shrink: 0;
   gap: 12px;
+}
+
+@media (max-width: 720px) {
+  .home-view {
+    gap: 18px;
+  }
+
+  .home-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  .action-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .action-links a {
+    width: 100%;
+  }
 }
 </style>

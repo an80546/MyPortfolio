@@ -54,4 +54,16 @@ const project = computed(() => projects.find((item) => item.id === route.params.
   margin: 12px 0 0;
   color: #5b6b80;
 }
+
+@media (max-width: 720px) {
+  .back-link {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .not-found {
+    border-radius: 16px;
+    padding: 22px;
+  }
+}
 </style>
